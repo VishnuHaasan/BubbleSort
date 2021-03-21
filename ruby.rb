@@ -5,9 +5,7 @@ def bubble_sort(array)
     issorthappen = false;
     for j in 0..array.length-2
       if array[j]>array[j+1]
-        temp = array[j];
-        array[j] = array[j+1];
-        array[j+1] = temp;
+        array[j],array[j+1] = array[j+1],array[j];
         issorthappen = true;
       end;
     end;
@@ -22,9 +20,7 @@ def bubble_sort_by(array)
     issorthappen = false;
     for j in 0..array.length-2
       if (yield array[j],array[j+1]).to_i > 0
-        temp = array[j];
-        array[j] = array[j+1];
-        array[j+1] = temp;
+        array[j],array[j+1] = array[j+1],array[j];
         issorthappen = true;
       end;
     end;
